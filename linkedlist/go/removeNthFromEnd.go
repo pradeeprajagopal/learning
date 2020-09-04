@@ -16,14 +16,17 @@ package main
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	ptr := head
-	var ctr int
+	empty := &ListNode{
+		Next: &ListNode
+	}
+	var ctr,length int
 	for ptr != nil {
 		ptr = ptr.Next
 		ctr++
 	}
-	length := ctr - n
-	prev := &ListNode{}
-	for length != 0 {
+	length = ctr - n
+	prev := &ListNode{Next:empty}
+	for length < 0 {
 		prev = ptr
 		ptr = ptr.Next
 		length--
