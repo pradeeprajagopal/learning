@@ -1,3 +1,5 @@
+package main
+
 // Given a linked list, determine if it has a cycle in it.
 
 // To represent a cycle in the given linked list, we use an integer pos which represents the position (0-indexed) in the linked list where the tail connects to. If pos == -1, then there is no cycle in the linked list.
@@ -28,13 +30,6 @@
 // -105 <= Node.val <= 105
 // pos is -1 or a valid index in the linked-list.
 
-package main
-
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
 func detectCycle(head *ListNode) *ListNode {
 
 	if head == nil || head.Next == nil {
@@ -52,25 +47,5 @@ func detectCycle(head *ListNode) *ListNode {
 		s, head = s.Next, head.Next
 	}
 
-	return slow
-}
-
-func detectCycle(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
-		return nil
-	}
-
-	slow, fast := head.Next, head.Next.Next
-	for fast != nil && fast.Next != nil && slow != fast {
-		slow, fast = slow.Next, fast.Next.Next
-	}
-
-	if slow != fast {
-		return nil
-	}
-
-	for slow != head {
-		slow, head = slow.Next, head.Next
-	}
 	return slow
 }

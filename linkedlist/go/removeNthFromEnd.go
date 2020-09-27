@@ -1,3 +1,4 @@
+package main
 // Given a linked list, remove the n-th node from the end of list and return its head.
 
 // Example:
@@ -12,7 +13,7 @@
 // Follow up:
 
 // Could you do this in one pass?
-package main
+
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	ptr := head

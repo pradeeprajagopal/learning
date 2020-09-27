@@ -1,3 +1,5 @@
+package main
+
 // Write a program to find the node at which the intersection of two singly linked lists begins.
 
 // For example, the following two linked lists:
@@ -30,14 +32,6 @@
 // You may assume there are no cycles anywhere in the entire linked structure.
 // Each value on each linked list is in the range [1, 10^9].
 // Your code should preferably run in O(n) time and use only O(1) memory.
-
-package main
-
-//Definition for singly-linked list.
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
 
 func getIntersectionNode(headA, headB *ListNode) *ListNode {
 	nodea, nodeb := headA, headB
